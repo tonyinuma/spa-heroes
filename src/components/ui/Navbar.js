@@ -14,21 +14,21 @@ export const Navbar = () => {
                 className="navbar-brand"
                 to="/"
             >
-                Asociaciones
+                Heroes X
             </Link>
 
             <div className="navbar-collapse">
                 <div className="navbar-nav">
 
                     <NavLink
-                        className="nav-item nav-link"
+                        className={({isActive}) => console.log(isActive)}
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink
-                        className="nav-item nav-link"
+                        className={({isActive}) => `nav-item nav-link ${isActive && 'active'}`}
                         to="/dc"
                     >
                         DC
