@@ -17,7 +17,6 @@ export const Navbar = () => {
 
                     <NavLink
                         className="nav-item nav-link"
-                        exact
                         to="/marvel"
                     >
                         Marvel
@@ -25,7 +24,6 @@ export const Navbar = () => {
 
                     <NavLink
                         className="nav-item nav-link"
-                        exact
                         to="/dc"
                     >
                         DC
@@ -37,7 +35,6 @@ export const Navbar = () => {
                 <ul className="navbar-nav ml-auto">
                     <NavLink
                         className="nav-item nav-link"
-                        exact
                         to="/login"
                     >
                         Logout
