@@ -1,6 +1,6 @@
 import {getHeroByPublisher} from "../../selectors/getHeroByPublisher";
 
-export const MyComponent = ({publisher = 'marvel'}) => {
+export const HeroList = ({publisher = 'marvel'}) => {
 
     const heroes = getHeroByPublisher(publisher);
 
