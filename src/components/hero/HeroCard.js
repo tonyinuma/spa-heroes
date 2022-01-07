@@ -5,7 +5,7 @@ export const HeroCard = ({hero}) => {
     const imagePath = `/assets/images/heroes/${hero.id}.jpg`;
 
     return (
-        <div className="col">
+        <div className="col-md-4 mb-4">
             <div className="card bg-dark text-white">
                 <Link to={`/hero/${hero.id}`}>
                     <img src={imagePath} className="card-img-top" alt={hero.superhero}/>
