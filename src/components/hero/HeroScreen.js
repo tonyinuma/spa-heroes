@@ -16,8 +16,8 @@ const HeroScreen = () => {
     }
 
     return (
-        <div className="row mt-5">
-            <div className="col-md-4">
+        <div className="row mt-5 animate__animated animate__bounceInLeft">
+            <div className="col-md-4 animate__animated animate__fadeIn">
                 <img src={heroPath} alt={hero.id} className="img-thumbnail"/>
             </div>
             <div className="col-md-8">
