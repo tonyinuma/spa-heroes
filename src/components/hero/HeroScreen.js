@@ -1,11 +1,12 @@
 import {Navigate, useNavigate, useParams} from "react-router-dom";
 import {getHeroById} from "../../selectors/getHeroById";
+import {useMemo} from "react";
 
 const HeroScreen = () => {
 
     const {id} = useParams();
     const navigate = useNavigate();
-    const hero = getHeroById(id)
+    const hero = useMemo(() => getHeroById(id), [id]);
 
     if (!hero) return <Navigate to="/"/>
     const heroPath = `/assets/images/heroes/${hero.id}.jpg`
