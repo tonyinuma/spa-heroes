@@ -46,6 +46,12 @@ const SearchScreen = () => {
                     <hr/>
 
                     {
+                        (q === '') ?
+                            <div className="alert alert-info">Search Heroes</div> : (heroesFiltered.length === 0) &&
+                            <div className="alert alert-danger">No Results for '{q}'</div>
+                    }
+
+                    {
                         heroesFiltered.map(hero => (
                             <HeroCard key={hero.id} hero={hero}/>
                         ))
