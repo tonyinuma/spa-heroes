@@ -51,11 +51,13 @@ const SearchScreen = () => {
                             <div className="alert alert-danger">No Results for '{q}'</div>
                     }
 
-                    {
-                        heroesFiltered.map(hero => (
-                            <HeroCard key={hero.id} hero={hero}/>
-                        ))
-                    }
+                    <div className="row">
+                        {
+                            heroesFiltered.map(hero => (
+                                <HeroCard key={hero.id} hero={hero}/>
+                            ))
+                        }
+                    </div>
 
                 </div>
             </div>
