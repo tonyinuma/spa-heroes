@@ -1,5 +1,7 @@
 import React from 'react';
 import {useForm} from "../../hooks/useForm";
+import {getHeroByName} from "../../selectors/getHeroesByName";
+import {HeroCard} from "../hero/HeroCard";
 
 const SearchScreen = () => {
 
@@ -8,6 +10,7 @@ const SearchScreen = () => {
     });
 
     const {searchText} = formValues;
+    const heroesFiltered = getHeroByName(searchText);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -31,6 +34,17 @@ const SearchScreen = () => {
                             Search
                         </button>
                     </form>
+                </div>
+                <div className="col-md-7">
+                    <h4>Results</h4>
+                    <hr/>
+
+                    {
+                        heroesFiltered.map(hero => (
+                            <HeroCard key={hero.id} hero={hero}/>
+                        ))
+                    }
+
                 </div>
             </div>
         </>
