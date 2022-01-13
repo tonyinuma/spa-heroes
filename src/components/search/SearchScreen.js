@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {useForm} from "../../hooks/useForm";
-import {getHeroByName} from "../../selectors/getHeroesByName";
+import {getHeroesByName} from "../../selectors/getHeroesByName";
 import {HeroCard} from "../hero/HeroCard";
 import {useLocation, useNavigate} from "react-router-dom";
 import queryString from "query-string";
@@ -17,7 +17,7 @@ const SearchScreen = () => {
     });
 
     const {searchText} = formValues;
-    const heroesFiltered = getHeroByName(q);
+    const heroesFiltered = useMemo(() => getHeroesByName(q), [q]);
 
     const handleSearch = (e) => {
         e.preventDefault();
