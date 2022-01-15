@@ -4,10 +4,7 @@ import {useReducer} from "react";
 import {authReducer} from "./auth/authReducer";
 
 const init = () => {
-    return {
-        logged: true,
-        name: 'Tony'
-    }
+    return JSON.parse(localStorage.getItem('user')) || {logged: false}
 }
 
 const HeroesApp = () => {
