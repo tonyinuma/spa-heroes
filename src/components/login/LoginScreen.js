@@ -15,8 +15,11 @@ const LoginScreen = () => {
                 name: 'Tony ID'
             }
         }
-        dispatch(action)
-        navigate('/', {
+        dispatch(action);
+
+        const path = localStorage.getItem('lastPath') || '/';
+
+        navigate(path, {
             replace: true
         });
     }
