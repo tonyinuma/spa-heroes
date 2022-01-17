@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
-
-const heroImages = require.context('../../assets/images/heroes', true);
+import {heroImages} from "../../helpers/heroImages";
 
 export const HeroCard = ({hero}) => {
 
