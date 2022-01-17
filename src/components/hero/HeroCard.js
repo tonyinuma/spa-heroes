@@ -1,14 +1,14 @@
 import {Link} from "react-router-dom";
 
-export const HeroCard = ({hero}) => {
+const heroImages = require.context('../../assets/images/heroes', true);
 
-    const imagePath = `/assets/images/heroes/${hero.id}.jpg`;
+export const HeroCard = ({hero}) => {
 
     return (
         <div className="col-md-4 mb-4">
             <div className="card bg-dark text-white">
                 <Link to={`/hero/${hero.id}`}>
-                    <img src={imagePath} className="card-img-top" alt={hero.superhero}/>
+                    <img src={heroImages(`./${hero.id}.jpg`)} className="card-img-top" alt={hero.superhero}/>
                     <div className="card-img-overlay">
                         <h4 className="card-title text-info px-2 position-absolute bottom-0 start-0">
                             <b style={{background: 'black'}}>{hero.superhero}</b>
